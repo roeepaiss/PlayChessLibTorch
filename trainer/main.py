@@ -5,7 +5,7 @@ import json
 import os
 import pathlib
 
-from dataloader import BatchLoader
+from dataloader import BatchLoader, Batch
 from model import (
     NnBoard768Cuda,
     NnBoard768,
@@ -25,13 +25,15 @@ LOG_ITERS = 10_000_000
 
 
 class WeightClipper:
-    def __init__(self, frequency=1):
+    def __init__(self, frequency=1, lower_bound=-1.98, upper_bound=1.98):
         self.frequency = frequency
+        self.lower_bound = lower_bound
+        self.upper_bound = upper_bound
 
     def __call__(self, module):
         if hasattr(module, "weight"):
             w = module.weight.data
-            w = w.clamp(-1.98, 1.98)
+            w = w.clamp(self.lower_bound, self.upper_bound)
             module.weight.data = w
 
 
@@ -48,6 +50,7 @@ def train(
     train_log: TrainLog | None = None,
 ) -> None:
     clipper = WeightClipper()
+    output_clipper = WeightClipper(1, -0.498, 0.498)
     running_loss = torch.zeros((1,), device=DEVICE)
     start_time = time()
     iterations = 0
@@ -94,6 +97,9 @@ def train(
         loss.backward()
         optimizer.step()
         model.apply(clipper)
+
+        if model is NnBoard768:
+            model.modules['out'].apply(output_clipper)
 
         with torch.no_grad():
             running_loss += loss
@@ -148,7 +154,7 @@ def main():
 
     train_log = TrainLog(args.train_id)
 
-    model = NnHalfKPCuda(128).to(DEVICE)
+    model = NnBoard768(256).to(DEVICE)
 
     data_path = pathlib.Path(args.data_root)
     paths = list(map(str, data_path.glob("*.bin")))
