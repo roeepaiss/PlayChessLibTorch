@@ -25,8 +25,8 @@ pub fn run(options: Options) -> Result<()> {
     for line in input.lines() {
         let line = line?;
         let _ = (|| {
-            let (board, annotation) = line.split_once(" | ")?;
-            let (cp, wdl) = annotation.split_once(" | ")?;
+            let (board, annotation) = line.split_once(" [")?;
+            let (wdl, cp) = annotation.split_once("] ")?;
 
             let board: Board = board.parse().ok()?;
             let cp: f32 = cp.parse().ok()?;
