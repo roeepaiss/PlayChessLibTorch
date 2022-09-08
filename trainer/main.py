@@ -50,7 +50,7 @@ def train(
     train_log: TrainLog | None = None,
 ) -> None:
     clipper = WeightClipper()
-    output_clipper = WeightClipper(1, -0.498, 0.498)
+    # output_clipper = WeightClipper(1, -0.498, 0.498)
     running_loss = torch.zeros((1,), device=DEVICE)
     start_time = time()
     iterations = 0
@@ -98,8 +98,8 @@ def train(
         optimizer.step()
         model.apply(clipper)
 
-        if model is NnBoard768:
-            model.modules['out'].apply(output_clipper)
+        # if model is NnBoard768:
+        #     model.modules['out'].apply(output_clipper)
 
         with torch.no_grad():
             running_loss += loss
