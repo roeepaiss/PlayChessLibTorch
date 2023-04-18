@@ -1,5 +1,5 @@
 # marlinflow
-Neural Network training repository for the Black Marlin chess engine
+Neural Network training repository for the PlayChessLib.Engine chess engine
 
 # Requirements
 - Python 3
