@@ -88,10 +88,10 @@ def train(
                 with open(f"nn/{train_id}.json", "w") as json_file:
                     json.dump(param_map, json_file)
 
-
         optimizer.zero_grad()
         prediction = model(batch)
-        expected = torch.sigmoid(batch.cp / scale) * (1 - wdl) + batch.wdl * wdl
+        expected = torch.sigmoid(batch.cp / scale) * \
+            (1 - wdl) + batch.wdl * wdl
 
         loss = torch.mean((prediction - expected) ** 2)
         loss.backward()
@@ -129,11 +129,14 @@ def main():
     parser.add_argument(
         "--data-root", type=str, help="Root directory of the data files"
     )
-    parser.add_argument("--train-id", type=str, help="ID to save train logs with")
+    parser.add_argument("--train-id", type=str,
+                        help="ID to save train logs with")
     parser.add_argument("--lr", type=float, help="Initial learning rate")
     parser.add_argument("--epochs", type=int, help="Epochs to train for")
-    parser.add_argument("--batch-size", type=int, default=16384, help="Batch size")
-    parser.add_argument("--wdl", type=float, default=0.0, help="WDL weight to be used")
+    parser.add_argument("--batch-size", type=int,
+                        default=16384, help="Batch size")
+    parser.add_argument("--wdl", type=float, default=0.0,
+                        help="WDL weight to be used")
     parser.add_argument("--scale", type=float, help="WDL weight to be used")
     parser.add_argument(
         "--save-epochs",
