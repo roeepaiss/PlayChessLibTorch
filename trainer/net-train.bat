@@ -1,1 +1,1 @@
-py main.py --data-root="D:\Projects\Chess.com Project\data\bin" --train-id=1 --scale=400 --batch-size=500000 --epochs=1 --lr=5e-3 --lr-drop=30 --wdl=0.4
+py main.py --data-root="D:\Projects\Chess.com Project\data\bin" --train-id=1 --scale=400 --batch-size=500000 --epochs=1 --lr=5e-3 --lr-drop=30 --wdl=0.4 --save-epochs=2

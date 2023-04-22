@@ -20,7 +20,7 @@ import torch
 from trainlog import TrainLog
 
 DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-
+print(DEVICE)
 LOG_ITERS = 10_000_000
 
 
