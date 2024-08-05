@@ -1,0 +1,15 @@
+D:\Projects\Chess.com Project\SignalRChessServer\Convert data txt to bin\bin\Debug\net7.0\Convert data txt to bin.exe
+D:\Projects\Chess.com Project\SignalRChessServer\Convert data txt to bin\bin\Debug\net7.0\Convert data txt to bin.deps.json
+D:\Projects\Chess.com Project\SignalRChessServer\Convert data txt to bin\bin\Debug\net7.0\Convert data txt to bin.runtimeconfig.json
+D:\Projects\Chess.com Project\SignalRChessServer\Convert data txt to bin\bin\Debug\net7.0\Convert data txt to bin.dll
+D:\Projects\Chess.com Project\SignalRChessServer\Convert data txt to bin\bin\Debug\net7.0\Convert data txt to bin.pdb
+D:\Projects\Chess.com Project\SignalRChessServer\Convert data txt to bin\obj\Debug\net7.0\Convert data txt to bin.csproj.AssemblyReference.cache
+D:\Projects\Chess.com Project\SignalRChessServer\Convert data txt to bin\obj\Debug\net7.0\Convert data txt to bin.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Chess.com Project\SignalRChessServer\Convert data txt to bin\obj\Debug\net7.0\Convert data txt to bin.AssemblyInfoInputs.cache
+D:\Projects\Chess.com Project\SignalRChessServer\Convert data txt to bin\obj\Debug\net7.0\Convert data txt to bin.AssemblyInfo.cs
+D:\Projects\Chess.com Project\SignalRChessServer\Convert data txt to bin\obj\Debug\net7.0\Convert data txt to bin.csproj.CoreCompileInputs.cache
+D:\Projects\Chess.com Project\SignalRChessServer\Convert data txt to bin\obj\Debug\net7.0\Convert data txt to bin.dll
+D:\Projects\Chess.com Project\SignalRChessServer\Convert data txt to bin\obj\Debug\net7.0\refint\Convert data txt to bin.dll
+D:\Projects\Chess.com Project\SignalRChessServer\Convert data txt to bin\obj\Debug\net7.0\Convert data txt to bin.pdb
+D:\Projects\Chess.com Project\SignalRChessServer\Convert data txt to bin\obj\Debug\net7.0\Convert data txt to bin.genruntimeconfig.cache
+D:\Projects\Chess.com Project\SignalRChessServer\Convert data txt to bin\obj\Debug\net7.0\ref\Convert data txt to bin.dll
